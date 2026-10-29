@@ -1,23 +1,23 @@
-const CACHE_NAME = 'daein-settlement-v1-0-icon2';
-const CORE_ASSETS = [
+const CACHE_NAME = 'daein-settlement-v1-install3';
+const CORE = [
   './',
   './index.html',
-  './manifest.webmanifest?v=1.0-icon2',
-  './icon-192.png?v=1.0-icon2',
-  './icon-512.png?v=1.0-icon2',
-  './apple-touch-icon.png?v=1.0-icon2',
-  './favicon-32.png?v=1.0-icon2'
+  './manifest.json?v=1.0-install3',
+  './icon-192.png?v=1.0-install3',
+  './icon-512.png?v=1.0-install3',
+  './apple-touch-icon.png?v=1.0-install3',
+  './favicon-32.png?v=1.0-install3'
 ];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)));
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE)));
   self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
     ))
   );
   self.clients.claim();
@@ -26,12 +26,10 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   event.respondWith(
-    fetch(event.request)
-      .then(response => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)).catch(() => {});
-        return response;
-      })
-      .catch(() => caches.match(event.request).then(hit => hit || caches.match('./index.html')))
+    fetch(event.request).then(response => {
+      const copy = response.clone();
+      caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)).catch(()=>{});
+      return response;
+    }).catch(() => caches.match(event.request).then(r => r || caches.match('./index.html')))
   );
 });

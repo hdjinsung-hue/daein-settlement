@@ -1834,7 +1834,7 @@ body{
 .hero.hero-unified.clean-top-banner .hero-unified-img{object-fit:cover !important;object-position:center !important;}
 </style>
 <!-- GitHub Pages / 모바일 바로가기 설정 -->
-<link rel="manifest" href="./manifest.webmanifest?v=1.0-icon2">
+<link rel="manifest" href="./manifest.json?v=1.0-install3">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=1.0-icon2">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png?v=1.0-icon2">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=1.0-icon2">
@@ -3435,5 +3435,119 @@ if ('serviceWorker' in navigator) {
   .medical strong{font-size:23px!important;}
 }
 </style>
+
+
+<style id="mobile-install-ui-v1">
+@media screen and (max-width:640px){
+  #mobileInstallCard{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:6px 8px;
+    padding:8px 9px;
+    border:1px solid #b9d9f8;
+    border-radius:12px;
+    background:linear-gradient(135deg,#ffffff 0%,#edf7ff 100%);
+    box-shadow:0 4px 14px rgba(15,65,115,.14);
+  }
+  #mobileInstallCard .installIcon{
+    width:34px;height:34px;border-radius:9px;flex:0 0 34px;
+    object-fit:cover;border:1px solid #d7e7f5;background:#fff;
+  }
+  #mobileInstallCard .installCopy{min-width:0;flex:1;}
+  #mobileInstallCard .installTitle{
+    font-size:12.5px;font-weight:900;color:#0b315f;line-height:1.15;
+  }
+  #mobileInstallCard .installSub{
+    margin-top:2px;font-size:9.5px;font-weight:700;color:#64748b;line-height:1.2;
+  }
+  #mobileInstallBtn{
+    border:0;border-radius:9px;padding:9px 12px;white-space:nowrap;
+    background:linear-gradient(135deg,#0b7fe5 0%,#1769d8 100%);
+    color:#fff;font-size:11px;font-weight:900;
+    box-shadow:0 3px 8px rgba(23,105,216,.25);
+  }
+  #mobileInstallClose{
+    border:0;background:transparent;color:#64748b;font-size:18px;
+    line-height:1;padding:4px 2px;
+  }
+}
+@media screen and (min-width:641px){
+  #mobileInstallCard{display:none!important;}
+}
+</style>
+
+<script id="mobile-install-ui-script-v1">
+(function(){
+  let deferredPrompt = null;
+
+  function isStandalone(){
+    return window.matchMedia('(display-mode: standalone)').matches ||
+           window.navigator.standalone === true;
+  }
+
+  function addInstallCard(){
+    if (isStandalone() || document.getElementById('mobileInstallCard')) return;
+    const card = document.createElement('div');
+    card.id = 'mobileInstallCard';
+    card.innerHTML = `
+      <img class="installIcon" src="./icon-192.png?v=1.0-install3" alt="">
+      <div class="installCopy">
+        <div class="installTitle">합의금 산출 V1.0</div>
+        <div class="installSub">휴대폰 바탕화면에 앱처럼 추가</div>
+      </div>
+      <button id="mobileInstallBtn" type="button">홈 화면에 설치</button>
+      <button id="mobileInstallClose" type="button" aria-label="닫기">×</button>
+    `;
+    document.body.insertBefore(card, document.body.firstChild);
+
+    document.getElementById('mobileInstallClose').onclick = function(){
+      card.remove();
+    };
+
+    document.getElementById('mobileInstallBtn').onclick = async function(){
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        try { await deferredPrompt.userChoice; } catch(e) {}
+        deferredPrompt = null;
+        return;
+      }
+
+      const ua = navigator.userAgent || '';
+      const isiOS = /iphone|ipad|ipod/i.test(ua);
+      const isAndroid = /android/i.test(ua);
+
+      if (isiOS) {
+        alert('iPhone에서는 Safari의 공유 버튼을 누른 뒤 “홈 화면에 추가”를 선택해 주세요.');
+      } else if (isAndroid) {
+        alert('설치창이 바로 뜨지 않으면 Chrome 메뉴에서 “홈 화면에 추가” 또는 “설치 및 바로가기 만들기”를 선택해 주세요.');
+      } else {
+        alert('브라우저 메뉴에서 홈 화면 추가 또는 앱 설치를 선택해 주세요.');
+      }
+    };
+  }
+
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferredPrompt = e;
+    addInstallCard();
+  });
+
+  window.addEventListener('appinstalled', function(){
+    deferredPrompt = null;
+    const card = document.getElementById('mobileInstallCard');
+    if (card) card.remove();
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.matchMedia('(max-width: 640px)').matches && !isStandalone()) {
+      addInstallCard();
+    }
+  });
+})();
+</script>
 
 </body></html>
