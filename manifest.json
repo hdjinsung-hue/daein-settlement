@@ -1,9 +1,9 @@
 {
   "id": "./",
-  "name": "대인보상 합의금 산출 프로그램 V1.0",
+  "name": "대인보상 합의금 산출 프로그램 V1.2",
   "short_name": "합의금 산출",
   "description": "대인보상 합의금 산출 프로그램",
-  "start_url": "./",
+  "start_url": "./?app=v1.2",
   "scope": "./",
   "display": "standalone",
   "display_override": [
@@ -17,13 +17,13 @@
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "./icon-192.png?v=1.0-install3",
+      "src": "./icon-192.png?v=1.2-fault",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./icon-512.png?v=1.0-install3",
+      "src": "./icon-512.png?v=1.2-fault",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

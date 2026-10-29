@@ -1,12 +1,12 @@
-const CACHE_NAME = 'daein-settlement-v1-install3';
+const CACHE_NAME = 'daein-settlement-v1-2-fault';
 const CORE = [
   './',
   './index.html',
-  './manifest.json?v=1.0-install3',
-  './icon-192.png?v=1.0-install3',
-  './icon-512.png?v=1.0-install3',
-  './apple-touch-icon.png?v=1.0-install3',
-  './favicon-32.png?v=1.0-install3'
+  './manifest.json?v=1.2-fault',
+  './icon-192.png?v=1.2-fault',
+  './icon-512.png?v=1.2-fault',
+  './apple-touch-icon.png?v=1.2-fault',
+  './favicon-32.png?v=1.2-fault'
 ];
 
 self.addEventListener('install', event => {
