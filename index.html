@@ -3325,4 +3325,114 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+
+<style id="mobile-ui-final-v3">
+/* ===== 모바일 UI 확정본 v3 : PC 화면에는 영향 없음 ===== */
+@media screen and (max-width:640px){
+  /* 전체 배경/폭 */
+  html,body{overflow-x:hidden!important;background:#eef5fb!important;}
+  body{padding:0 0 10px!important;color:#111827!important;}
+  .app{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:7px 8px 10px!important;}
+  .app>section{display:block!important;width:100%!important;margin:0!important;padding:0!important;}
+
+  /* 상단 배너 */
+  .hero.hero-unified.clean-top-banner{height:104px!important;min-height:104px!important;border-radius:0!important;margin:0!important;overflow:hidden!important;}
+  .hero-unified-img{width:100%!important;height:104px!important;object-fit:cover!important;object-position:center!important;}
+  .banner-text-overlay{left:12px!important;right:8px!important;top:13px!important;width:auto!important;padding:0!important;background:transparent!important;box-shadow:none!important;border-radius:0!important;}
+  .banner-title{font-size:20px!important;line-height:1.08!important;font-weight:950!important;color:#fff!important;letter-spacing:-.045em!important;text-shadow:0 2px 5px rgba(0,0,0,.62)!important;white-space:nowrap!important;}
+  .banner-title .accent{color:#ffc52d!important;text-shadow:0 2px 5px rgba(0,0,0,.62)!important;}
+  .banner-subtitle{margin-top:7px!important;font-size:8.8px!important;line-height:1.2!important;font-weight:850!important;color:#fff!important;white-space:nowrap!important;text-shadow:0 1px 4px rgba(0,0,0,.85)!important;}
+  .banner-subtitle .accent-date{color:#fff!important;font-weight:900!important;}
+  .version-badge{top:9px!important;right:8px!important;font-size:10px!important;padding:4px 8px!important;}
+
+  /* 카드 */
+  .card{width:100%!important;margin:0 0 7px!important;border:1px solid #d5e2ef!important;border-radius:12px!important;background:#fff!important;box-shadow:0 3px 10px rgba(20,58,95,.10)!important;overflow:hidden!important;}
+  .card .hd,.hd{min-height:38px!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:8px 10px!important;border:0!important;border-radius:0!important;background:linear-gradient(135deg,#0a78dd 0%,#1e9be9 100%)!important;color:#fff!important;font-size:16px!important;font-weight:900!important;letter-spacing:-.025em!important;text-align:center!important;text-shadow:0 1px 2px rgba(0,0,0,.18)!important;}
+  .hd small{font-size:9px!important;color:#fff!important;font-weight:750!important;margin-left:5px!important;}
+  .body{padding:8px 10px!important;}
+
+  /* 위자료 안내 카드 모바일에서 완전 제거 */
+  .comfort-guide-card{display:none!important;}
+
+  /* 기본정보/입력 행 */
+  .row{display:grid!important;grid-template-columns:42% 58%!important;align-items:center!important;gap:6px!important;padding:5px 0!important;border-bottom:1px solid #edf2f7!important;min-height:40px!important;}
+  .row:last-child{border-bottom:0!important;}
+  .row label,.app label{font-size:13px!important;font-weight:850!important;line-height:1.2!important;color:#111827!important;letter-spacing:-.02em!important;}
+  .row label small,.hint{font-size:9.5px!important;line-height:1.28!important;color:#6b7280!important;font-weight:700!important;}
+  .field{display:flex!important;align-items:center!important;gap:5px!important;min-width:0!important;}
+  .field input,.field select,input,select{width:100%!important;min-width:0!important;height:36px!important;padding:6px 9px!important;border:1px solid #cbdbea!important;border-radius:8px!important;background:#fff!important;color:#111827!important;font-size:13px!important;font-weight:800!important;text-align:right!important;box-shadow:inset 0 1px 2px rgba(15,23,42,.03)!important;}
+  input[type="date"]{text-align:left!important;}
+  .field b{font-size:11px!important;color:#1f2937!important;white-space:nowrap!important;}
+
+  /* 12/13/14 및 휴업손해 선택 */
+  .seg,.mode{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:5px!important;width:100%!important;}
+  .mode{grid-template-columns:1fr 1fr!important;}
+  .seg button,.mode button{height:35px!important;padding:4px 3px!important;border-radius:8px!important;border:1px solid #c8d8e8!important;background:#fff!important;color:#111827!important;font-size:12px!important;font-weight:850!important;box-shadow:none!important;}
+  .seg button.on,.mode button.on,#dailyBtn.on,#incomeBtn.on{background:linear-gradient(135deg,#0878ee 0%,#138ee8 100%)!important;color:#fff!important;border-color:#0878ee!important;box-shadow:0 2px 6px rgba(8,120,238,.23)!important;}
+  .mode button small{font-size:8px!important;color:inherit!important;}
+
+  /* 손해항목 */
+  .loss{margin:0!important;padding:0!important;border:0!important;background:transparent!important;}
+  .loss>b{display:block!important;margin:3px 0 5px!important;color:#111827!important;font-size:13px!important;font-weight:900!important;}
+  #dailyBox,#incomeBox{padding:0!important;margin:0!important;}
+
+  /* 계산 버튼 */
+  #calcBtn,.calc-btn,.actions button:first-child{width:100%!important;min-height:48px!important;margin:8px 0 0!important;border:0!important;border-radius:10px!important;background:linear-gradient(180deg,#ff7915 0%,#ff5c00 100%)!important;color:#fff!important;font-size:17px!important;font-weight:950!important;box-shadow:0 5px 12px rgba(255,92,0,.28)!important;text-shadow:0 1px 2px rgba(0,0,0,.16)!important;}
+  .actions{display:flex!important;width:100%!important;margin:0!important;padding:0!important;}
+  .actions button:not(:first-child){display:none!important;}
+
+  /* 계산 결과 */
+  .result-item{display:grid!important;grid-template-columns:28px minmax(0,1fr) auto!important;gap:6px!important;align-items:center!important;min-height:39px!important;margin:0!important;padding:5px 4px!important;border:0!important;border-bottom:1px solid #edf2f7!important;border-radius:0!important;background:#fff!important;box-shadow:none!important;}
+  .result-item:last-of-type{border-bottom:0!important;}
+  .result-item .n{display:flex!important;align-items:center!important;justify-content:center!important;width:25px!important;height:25px!important;border-radius:50%!important;background:#147bd1!important;color:#fff!important;font-size:12px!important;font-weight:900!important;}
+  .result-item>span:nth-child(2){font-size:13px!important;font-weight:900!important;color:#111827!important;line-height:1.15!important;}
+  .result-item small{display:inline!important;margin-left:5px!important;font-size:8.5px!important;color:#7b8794!important;font-weight:700!important;}
+  .result-item .big{font-size:14px!important;font-weight:950!important;color:#111827!important;white-space:nowrap!important;}
+
+  /* 치료비 계산표 */
+  .calc-table,.treatment-summary{width:100%!important;table-layout:fixed!important;border-collapse:separate!important;border-spacing:0!important;margin:4px 0 6px!important;border:1px solid #cfddeb!important;border-radius:7px!important;overflow:hidden!important;background:#fff!important;box-shadow:none!important;}
+  .calc-table td,.calc-table th{padding:4px 6px!important;border-bottom:1px solid #e2eaf2!important;font-size:10px!important;line-height:1.15!important;color:#1f2937!important;background:#fff!important;word-break:keep-all!important;}
+  .calc-table tr:last-child td{border-bottom:0!important;}
+  .calc-table td:first-child{width:58%!important;background:#f6faff!important;font-weight:750!important;}
+  .calc-table td:last-child{text-align:right!important;font-weight:850!important;white-space:nowrap!important;}
+  #medicalFaultDeduct,#own,#own2{color:#f25c05!important;font-weight:950!important;}
+
+  /* 최종 합의금 + 구상액 : 이미지처럼 2열 카드 */
+  .right .card:first-child .body{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;}
+  .right .card:first-child .body > .calc-table{grid-column:1 / -1!important;}
+  .right .card:first-child .body > .total{grid-column:1!important;}
+  .right .card:first-child .body > .medical{grid-column:2!important;}
+  .right .card:first-child .body > .grand{grid-column:1 / -1!important;}
+  .total,.medical{margin:0!important;padding:9px 5px!important;border-radius:10px!important;background:#fff!important;text-align:center!important;box-shadow:none!important;min-width:0!important;}
+  .total{border:1.5px solid #1688df!important;color:#0667bf!important;}
+  .medical{border:1.5px solid #ff8a2b!important;color:#f15c00!important;}
+  .total strong{display:block!important;margin-top:4px!important;color:#0667bf!important;font-size:27px!important;line-height:1!important;font-weight:950!important;letter-spacing:-.04em!important;}
+  .medical strong{display:block!important;margin-top:4px!important;color:#f15c00!important;font-size:25px!important;line-height:1!important;font-weight:950!important;letter-spacing:-.04em!important;}
+  .total small,.medical small{display:block!important;margin-top:5px!important;font-size:8px!important;line-height:1.22!important;font-weight:700!important;color:#4b5563!important;word-break:keep-all!important;}
+  .grand{display:none!important;}
+
+  /* 참고사항 */
+  .notice{font-size:9.5px!important;line-height:1.42!important;color:#374151!important;padding:8px 10px!important;}
+
+  /* 모바일에서는 하단 브랜드/고정바/출력 기능 숨김 */
+  .program-footer,.mobile-total{display:none!important;}
+  .actions button[onclick*="print"],.actions button[title*="출력"]{display:none!important;}
+
+  /* 불필요한 애니메이션 제거 */
+  .final-blink,.total.final-blink,.medical.final-blink,#netSettlement.final-blink{animation:none!important;filter:none!important;transform:none!important;}
+}
+
+@media screen and (max-width:390px){
+  .app{padding:6px!important;}
+  .banner-title{font-size:18px!important;}
+  .banner-subtitle{font-size:8px!important;}
+  .row{grid-template-columns:40% 60%!important;}
+  .row label,.app label{font-size:12px!important;}
+  .field input,.field select,input,select{font-size:12px!important;}
+  .result-item .big{font-size:13px!important;}
+  .total strong{font-size:25px!important;}
+  .medical strong{font-size:23px!important;}
+}
+</style>
+
 </body></html>
