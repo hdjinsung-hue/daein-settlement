@@ -1,4 +1,4 @@
-const CACHE_NAME = 'daein-settlement-v1-2-mobilebrand1';
+const CACHE_NAME = 'daein-settlement-v1-2-webthreads1';
 const CORE = [
   './',
   './index.html',
