@@ -1,18 +1,16 @@
-const CACHE_NAME = 'daein-settlement-v1-0-mobile-v3-final';
+const CACHE_NAME = 'daein-settlement-v1-0-icon2';
 const CORE_ASSETS = [
   './',
   './index.html',
-  './manifest.webmanifest',
-  './icon-192.png',
-  './icon-512.png',
-  './apple-touch-icon.png',
-  './favicon-32.png'
+  './manifest.webmanifest?v=1.0-icon2',
+  './icon-192.png?v=1.0-icon2',
+  './icon-512.png?v=1.0-icon2',
+  './apple-touch-icon.png?v=1.0-icon2',
+  './favicon-32.png?v=1.0-icon2'
 ];
 
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS))
-  );
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)));
   self.skipWaiting();
 });
 
