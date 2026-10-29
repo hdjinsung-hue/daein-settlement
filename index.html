@@ -3185,4 +3185,144 @@ window.triggerFinalBlink = function(){};
 }
 </style>
 
+
+<style id="mobile-v2-target-layout">
+/* MOBILE V2 TARGET LAYOUT — desktop rules intentionally untouched */
+@media screen and (max-width:640px){
+  html,body{width:100%!important;max-width:100%!important;overflow-x:hidden!important;background:#edf5fc!important;}
+  body{margin:0!important;padding:0 0 8px!important;font-family:'Pretendard','SUIT','Malgun Gothic',sans-serif!important;}
+
+  /* Compact mobile hero like approved reference */
+  .hero.hero-unified.clean-top-banner{
+    width:100%!important;height:94px!important;min-height:94px!important;max-height:94px!important;
+    margin:0!important;border-radius:0!important;overflow:hidden!important;background:#062b5b!important;
+  }
+  .hero-unified-img{width:100%!important;height:94px!important;object-fit:cover!important;object-position:center 52%!important;display:block!important;}
+  .banner-text-overlay{
+    left:12px!important;top:11px!important;width:72%!important;max-width:72%!important;
+    padding:0!important;background:transparent!important;box-shadow:none!important;border-radius:0!important;
+  }
+  .banner-title{font-size:21px!important;line-height:1.02!important;font-weight:900!important;letter-spacing:-.055em!important;color:#fff!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important;white-space:nowrap!important;}
+  .banner-title .accent{color:#ffc432!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important;}
+  .banner-subtitle{margin-top:7px!important;font-size:9.4px!important;line-height:1.15!important;font-weight:800!important;color:#ffd34b!important;white-space:nowrap!important;text-shadow:0 1px 3px rgba(0,0,0,.6)!important;}
+  .banner-subtitle .accent-date{color:#fff!important;font-weight:900!important;}
+  .banner-version{right:8px!important;top:8px!important;padding:4px 8px 5px!important;font-size:11px!important;border-radius:999px!important;}
+
+  /* Full-width single column, compact card spacing */
+  .app{display:block!important;width:100%!important;max-width:100%!important;margin:0!important;padding:4px!important;}
+  .app>section{display:block!important;width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;}
+  .card{width:100%!important;margin:0 0 5px!important;border-radius:9px!important;box-shadow:0 2px 7px rgba(13,58,101,.10)!important;overflow:hidden!important;}
+  .card>.hd,.app .card>.hd{
+    min-height:31px!important;height:auto!important;padding:5px 9px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    font-size:14.5px!important;line-height:1.15!important;font-weight:900!important;letter-spacing:-.03em!important;
+  }
+  .card>.hd small,.app .card>.hd small{font-size:8.8px!important;line-height:1.1!important;margin-left:4px!important;}
+  .card>.body,.app .card>.body{padding:7px 9px!important;}
+
+  /* Basic info / damage input: compact two-column rows */
+  .row,.app .row{
+    display:grid!important;grid-template-columns:122px minmax(0,1fr)!important;gap:6px!important;align-items:center!important;
+    min-height:39px!important;padding:4px 0!important;border-bottom:1px solid #e7eef6!important;font-size:12px!important;
+  }
+  .row:last-child{border-bottom:0!important;}
+  .row label,.app .row label,.app label{font-size:12px!important;line-height:1.16!important;font-weight:850!important;letter-spacing:-.03em!important;color:#101820!important;}
+  .row label small,.app .row small,.app .hint{font-size:8.8px!important;line-height:1.18!important;color:#6d7c8d!important;}
+  .field,.app .field{width:100%!important;min-width:0!important;gap:5px!important;}
+  .field input,.field select,.app input,.app select{
+    width:100%!important;min-width:0!important;height:34px!important;min-height:34px!important;padding:5px 8px!important;
+    border-radius:7px!important;font-size:12.8px!important;font-weight:800!important;color:#111827!important;background:#fff!important;
+  }
+  .field b,.app .field b{font-size:11px!important;white-space:nowrap!important;}
+  .money-input{text-align:right!important;font-variant-numeric:tabular-nums!important;}
+
+  .seg,.mode{width:100%!important;display:flex!important;gap:5px!important;}
+  .seg button,.mode button,.app .seg button,.app .mode button{
+    flex:1 1 0!important;height:34px!important;min-height:34px!important;padding:4px 3px!important;border-radius:7px!important;
+    font-size:11.5px!important;line-height:1.1!important;font-weight:800!important;
+  }
+  .mode button small{font-size:8px!important;}
+  .loss{padding-top:2px!important;}
+  .loss>b{display:block!important;margin:1px 0 4px!important;font-size:12.2px!important;color:#111827!important;}
+
+  /* Writ consolation money guide */
+  .comfort-guide-card{margin-top:0!important;}
+  .comfort-guide-body{padding:6px 7px!important;}
+  .comfort-guide-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:5px!important;}
+  .comfort-guide-item{padding:6px 2px!important;border-radius:8px!important;}
+  .comfort-guide-item .g-label{font-size:10.5px!important;margin-bottom:1px!important;}
+  .comfort-guide-item strong{font-size:13.5px!important;line-height:1!important;}
+  .comfort-guide-note{margin-top:5px!important;font-size:8.5px!important;line-height:1.25!important;text-align:center!important;}
+
+  /* Mobile action: calculate only, matching reference */
+  .actions{display:block!important;margin-top:7px!important;}
+  .actions .primary{width:100%!important;min-height:43px!important;height:43px!important;border-radius:8px!important;font-size:14.5px!important;font-weight:900!important;box-shadow:0 4px 10px rgba(238,100,0,.22)!important;}
+  .actions .print{display:none!important;}
+
+  /* Results compact but readable */
+  .result-item,.app .result-item{
+    display:grid!important;grid-template-columns:26px minmax(0,1fr) auto!important;gap:5px!important;align-items:center!important;
+    min-height:42px!important;margin:3px 0!important;padding:5px 6px!important;border-radius:8px!important;font-size:11.5px!important;
+  }
+  .result-item .n,.app .result-item .n{width:23px!important;height:23px!important;font-size:10px!important;}
+  .result-item small,.app .result-item small{display:inline!important;margin:0 0 0 4px!important;font-size:8.1px!important;line-height:1.1!important;color:#728196!important;}
+  .result-item .big,.app .result-item .big{font-size:13.5px!important;font-weight:900!important;white-space:nowrap!important;font-variant-numeric:tabular-nums!important;}
+
+  .calc-table,.app .calc-table{width:100%!important;table-layout:fixed!important;margin:3px 0 0!important;border-radius:7px!important;font-size:10px!important;overflow:hidden!important;}
+  .calc-table td,.calc-table th,.app .calc-table td,.app .calc-table th{padding:4px 5px!important;font-size:10px!important;line-height:1.12!important;word-break:keep-all!important;}
+  .calc-table td:first-child{width:62%!important;}
+  .calc-table td:last-child{width:38%!important;text-align:right!important;font-size:10.8px!important;font-weight:900!important;white-space:nowrap!important;}
+  .calc-table.treatment-summary td,.app .treatment-summary td{padding:3.5px 5px!important;font-size:9.8px!important;}
+  .calc-table.treatment-summary td:last-child,.app .treatment-summary td:last-child{font-size:10.8px!important;}
+  .calc-table small{font-size:7.8px!important;}
+
+  /* Final settlement & recourse side-by-side, as approved reference */
+  .right .card:first-child .body{display:grid!important;grid-template-columns:1fr 1fr!important;gap:6px!important;align-items:stretch!important;}
+  .right .card:first-child .body > .calc-table{grid-column:1/-1!important;margin:0!important;}
+  .right .card:first-child .body > .calc-table + .calc-table{margin-top:1px!important;}
+  .right .card:first-child .body > .total{grid-column:1!important;}
+  .right .card:first-child .body > .medical{grid-column:2!important;}
+  .right .card:first-child .body > .grand{grid-column:1/-1!important;}
+  .total,.medical,.grand{margin:0!important;padding:8px 5px!important;border-radius:9px!important;font-size:10px!important;line-height:1.13!important;text-align:center!important;min-width:0!important;}
+  .total strong{font-size:25px!important;line-height:1!important;margin-top:4px!important;}
+  .medical strong{font-size:23px!important;line-height:1!important;margin-top:4px!important;}
+  .grand strong{font-size:18px!important;line-height:1!important;margin-top:4px!important;}
+  .total small,.medical small,.grand small{display:block!important;margin-top:4px!important;font-size:8.2px!important;line-height:1.2!important;word-break:keep-all!important;}
+
+  .notice,.app .notice{font-size:9.5px!important;line-height:1.4!important;padding:7px 9px!important;}
+
+  /* Reference screenshot has no obstructing fixed bar/footer banner */
+  .mobile-total{display:none!important;}
+  .program-footer.footer-image-banner{display:none!important;}
+
+  /* eliminate accidental horizontal overflow */
+  .app *, .card *, .row *, .result-item *, .calc-table *{max-width:100%;}
+}
+
+@media screen and (max-width:390px){
+  .banner-title{font-size:19.5px!important;}
+  .banner-subtitle{font-size:8.6px!important;}
+  .app{padding:3px!important;}
+  .card>.body,.app .card>.body{padding-left:7px!important;padding-right:7px!important;}
+  .row,.app .row{grid-template-columns:112px minmax(0,1fr)!important;gap:5px!important;}
+  .row label,.app .row label,.app label{font-size:11.5px!important;}
+  .field input,.field select,.app input,.app select{font-size:12.2px!important;}
+  .result-item,.app .result-item{grid-template-columns:24px minmax(0,1fr) auto!important;gap:4px!important;}
+  .result-item .big,.app .result-item .big{font-size:12.8px!important;}
+  .calc-table td,.calc-table th,.app .calc-table td,.app .calc-table th{font-size:9.5px!important;padding:3.5px 4px!important;}
+  .calc-table td:last-child{font-size:10.3px!important;}
+  .total strong{font-size:23px!important;}.medical strong{font-size:21px!important;}
+}
+</style>
+
+
+<script id="pwa-service-worker-register">
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./service-worker.js', { scope: './' })
+      .catch(function (err) { console.error('Service worker registration failed:', err); });
+  });
+}
+</script>
+
 </body></html>

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'daein-settlement-v1-0';
+const CACHE_NAME = 'daein-settlement-v1-0-mobile-v2';
 const CORE_ASSETS = [
   './',
   './index.html',
