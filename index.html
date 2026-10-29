@@ -3438,6 +3438,76 @@ if ('serviceWorker' in navigator) {
 </style>
 
 
+
+<style id="mobile-brand-footer-v12">
+#mobileBrandFooter{display:none;}
+@media screen and (max-width:640px){
+  #mobileBrandFooter{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    width:calc(100% - 16px);
+    box-sizing:border-box;
+    margin:10px auto 14px;
+    padding:12px 10px;
+    border:1px solid #dbe7f3;
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0 3px 12px rgba(15,55,95,.08);
+    text-align:center;
+  }
+  #mobileBrandFooter .mobile-madeby{
+    color:#334155;
+    font-size:11px;
+    line-height:1.35;
+    font-weight:800;
+    letter-spacing:-.25px;
+  }
+  #mobileBrandFooter .threads-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    max-width:100%;
+    padding:8px 12px;
+    border:1px solid #d7dee8;
+    border-radius:999px;
+    background:#f8fafc;
+    color:#111827;
+    font-size:11px;
+    line-height:1;
+    font-weight:900;
+    text-decoration:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+  #mobileBrandFooter .threads-link:active{transform:scale(.98);}
+  #mobileBrandFooter .threads-mark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#111827;
+    color:#fff;
+    font-size:13px;
+    font-weight:900;
+    flex:0 0 20px;
+  }
+}
+@media print{#mobileBrandFooter{display:none!important;}}
+</style>
+
+<footer id="mobileBrandFooter" aria-label="홍익보험의 정신 및 Threads 링크">
+  <div class="mobile-madeby">made by 홍익보험의 정신(김성호, 정진성)</div>
+  <a class="threads-link" href="https://www.threads.com/@insformation_official" target="_blank" rel="noopener noreferrer" aria-label="Threads insformation_official 바로가기">
+    <span class="threads-mark" aria-hidden="true">@</span>
+    <span>Threads @insformation_official</span>
+  </a>
+</footer>
+
 <style id="mobile-install-ui-v1">
 @media screen and (max-width:640px){
   #mobileInstallCard{
